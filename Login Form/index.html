@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LOGIN</title>
+</head>
+
+<body>
+    <div class="login">
+        <h1>LOGIN</h1>
+        <form id="loginform">
+
+            <label>USER NAME</label>
+            <input type="text" id="username" placeholder="User name">
+
+            <label>PASSWORD</label>
+            <input type="password" id="password" placeholder="Password">
+            <button type="submit">LOGIN</button>
+        </form>
+        <p id="error-message" style="color: cornflowerblue;"></p>
+    </div>
+
+    <script>
+        document.getElementById('loginform').addEventListener('submit', function(event)
+        {
+            event.preventDefault();
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === '' || password === '') {
+                document.getElementById('error-message').innerText = 'Please fill in all fields.';
+                return;
+            }
+
+            if (username === 'rinosha' && password ==='rifa1999')
+            {
+                alert('LOGIN SUCCESSFUL');
+            }
+            else
+            {
+                document.getElementById('error-message').innerText = 'Invalid User Name and Password .';
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>
